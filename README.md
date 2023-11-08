@@ -13,7 +13,7 @@ After testing two hypotheses in notebook and reporting the analysis into PDF doc
 ## First hypothesis
 
 Switching from RandomForestClassifier as an "independent judge" from list of models for predictions to "LGBMClassifier" as a judge,
-scores haven't really changed. The overfitting of RFC or ETC *(Extra Trees Classifier)* could be the cause of failure of the whole metemodel idea.
+scores haven't really changed. The overfitting of RFC or ETC *(Extra Trees Classifier)* could be the cause of failure of the whole metamodel idea.
 Since RFC and ETC were answering with 100% accuracy, Judge had no choice but listen to those models, that proved to be worse on test subset.
 
 > This experiment proves that scores do not really change depending on a model that makes a final verdict (if we chose a strong enough model, ofc.)
