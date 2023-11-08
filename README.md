@@ -47,5 +47,6 @@ Like, if we have a list of predictions, that looks like this:
 
 We will choose `1` as our answer, since it is the *mode* (occuring most frequently) within that list.
 
-I've implemented that theory in code in updated notebook (Commit on `08.11.2023`). This algorithm is ever so slightly better than the LGBMC
+I've implemented that theory in code in updated notebook (Commit on `08.11.2023`). I've chosen specifically odd amount of models to get predictions from `(5 models)` and concatenated all those
+predictions into a DataFrame. Then, by receiving `mode` of each individual row of preds. I received predictions to evaluate on. This algorithm is ever so slightly better than the LGBMC
 independent judge one. *This result is not satisfying at all*.
