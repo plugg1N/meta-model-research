@@ -8,7 +8,8 @@ a backup file if *Kaggle* platform fails to save my draft project.
 
 # Update 1
 
-After testing two hypotheses in notebook and reporting the analysis into PDF document, we have received some information about meta-models as a hypothetical idea:
+After testing two hypotheses in notebook and reporting the analysis into PDF and DOCX documents, I have received some information about meta-models as a hypothetical idea:
+
 
 ## First hypothesis
 
@@ -16,8 +17,19 @@ Switching from RandomForestClassifier as an "independent judge" from list of mod
 scores haven't really changed. The overfitting of RFC or ETC *(Extra Trees Classifier)* could be the cause of failure of the whole metamodel idea.
 Since RFC and ETC were answering with 100% accuracy, Judge had no choice but listen to those models, that proved to be worse on test subset.
 
-> This experiment proves that scores do not really change depending on a model that makes a final verdict (if we chose a strong enough model, ofc.)
+> This experiment proves that scores do not really change depending on a model that makes a final verdict (if we choose a strong enough model, ofc.)
+
 
 ## Second hypothesis
 
-Removing two 
+The hypothesis was that if I remove two models that overfit on training set completely, we can remove the problem of the first hypothesis. I removed
+RFC and ETC as models for evaluations from the `models` list and tried to test LGBMC (*LGBMClassifier*) as an independent judge. Scores from two models
+had been boosted significantly. The only thing left to do was to test LGBMC without the metadata to train on.
+
+As we can see in PDF file, LGBMC proved to be better of alone training on raw data than training on the metadata.
+
+> This experiment proves that even overfitting wasn't the problem anyway. Removing models that overfit doesn't make any difference. Independent judge
+> still tries to calibrate his (or her, if we want to be politically correct xD) predictions based on decision of other models.
+ 
+This sudden calibration might appear from the fact that models have bigger `feature importance` value than raw data features have. This means
+independent judge makes his desicions mostly based on models appended artifcially to dataset.
