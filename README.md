@@ -3,7 +3,7 @@
 Research of Meta Model theory. A notebook with verbose analysis and a pdf file with all reasonings.
 Progress will be made in the future, as my theory would be approved by more experienced people :)
 
-**DO NOT** review or reference cleanliness of the notebook provided since date `08.11.2023`. *.ipynb file is here only because I need
+**DO NOT** review or reference cleanliness of the notebook provided since date `08.11.2023`. `*.ipynb` file is here only because I need
 a backup file if *Kaggle* platform fails to save my draft project.
 
 # Update 1
