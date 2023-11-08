@@ -33,3 +33,19 @@ As we can see in PDF file, LGBMC proved to be better of alone training on raw da
  
 This sudden calibration might appear from the fact that models have bigger `feature importance` value than raw data features have. This means
 independent judge makes his desicions mostly based on models appended artifcially to dataset.
+
+
+# Update 2
+
+I've read more articles about metamodel theory. I've came across `voting algorithm` theory. It's **very simple**. We can just collect predictions
+from each model and without using any *judges* make our own predictions based on the value that is occuring more frequently within the list of predictions for certain row.
+Like, if we have a list of predictions, that looks like this:
+
+```python
+[ 1, 0, 1, 1, 1 ]
+```
+
+We will choose `1` as our answer, since it is the *mode* (occuring most frequently) within that list.
+
+I've implemented that theory in code in updated notebook (Commit on `08.11.2023`). This algorithm is ever so slightly better than the LGBMC
+independent judge one. *This result is not satisfying at all*.
